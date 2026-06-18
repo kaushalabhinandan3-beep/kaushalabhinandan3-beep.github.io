@@ -1,16 +1,183 @@
+Paste this whole thing into index.html and commit changes.
 <!DOCTYPE html>
 <html>
-<body style="background:#74d0ff;text-align:center;font-family:Arial">
-
-<h1>😈 Aditya the Devil</h1>
-
-<h2>Mohali Madness</h2>
-
-<button onclick="alert('OMG 💥')">
-
-BELLY SMASH
-
-</button>
-
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Aditya the Devil: Mohali Madness</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;font-family:Arial;background:#69c9ff;touch-action:none}
+#game{width:100vw;height:100vh;position:relative;overflow:hidden;background:linear-gradient(#67cfff 0 52%,#e2b15d 52% 100%)}
+#hud{position:absolute;top:25px;left:15px;right:15px;display:flex;justify-content:space-between;color:white;font-size:22px;font-weight:900;text-shadow:2px 2px 3px #000;z-index:5}
+#title{position:absolute;top:68px;left:0;right:0;text-align:center;color:#fff;font-weight:900;text-shadow:2px 2px #000;font-size:19px;z-index:4}
+#road{position:absolute;bottom:105px;left:0;right:0;height:90px;background:#444;border-top:8px solid #333;border-bottom:8px solid #333}
+#line{position:absolute;bottom:145px;left:0;right:0;border-top:6px dashed white}
+.shop{position:absolute;bottom:195px;width:88px;height:75px;background:#d84b2a;border:3px solid #7a1a10;border-radius:10px 10px 0 0}
+.sign{position:absolute;bottom:270px;width:115px;text-align:center;background:#fff176;color:#111;font-weight:900;border:3px solid #111;border-radius:12px;padding:4px}
+#aditya{position:absolute;bottom:175px;left:135px;width:92px;height:120px;z-index:4}
+.head{position:absolute;left:20px;top:0;width:55px;height:55px;background:#ffbd8d;border-radius:50%;border:3px solid #111}
+.horn1,.horn2{position:absolute;top:-16px;width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;border-bottom:25px solid #b00000}
+.horn1{left:25px}.horn2{left:55px}
+.face{position:absolute;top:17px;left:34px;font-size:20px}
+.body{position:absolute;left:5px;top:55px;width:82px;height:62px;background:#d90000;border-radius:48%;border:4px solid #111}
+.belly{position:absolute;left:30px;top:72px;width:58px;height:48px;background:#ffd19b;border-radius:50%;border:3px solid #111}
+.name{position:absolute;top:37px;left:-5px;font-size:12px;color:white;background:#111;border-radius:8px;padding:2px 7px;font-weight:900}
+.person{position:absolute;bottom:180px;width:44px;height:75px;z-index:3}
+.phead{width:30px;height:30px;background:#ffd1a1;border:3px solid #111;border-radius:50%;margin:auto}
+.pbody{width:38px;height:42px;background:#1667e8;border:3px solid #111;border-radius:10px;margin:auto}
+.bubble{position:absolute;background:white;color:#111;border:3px solid #111;border-radius:15px;padding:5px 9px;font-size:18px;font-weight:900;z-index:8}
+.item{position:absolute;bottom:185px;font-size:34px;z-index:3}
+#controls{position:absolute;bottom:22px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:center;z-index:10}
+.btn{border:3px solid white;border-radius:20px;background:#111;color:white;width:80px;height:64px;font-size:22px;font-weight:900}
+#smash{width:150px;background:#ff2020}
+#start,#end{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);z-index:20}
+.card{width:86%;background:white;border:5px solid #111;border-radius:25px;text-align:center;padding:22px}
+.card h1{color:#b00000;margin:0;font-size:30px}
+.card h2{margin:8px 0 14px}
+.bigbtn{background:#ff2020;color:white;border:0;border-radius:20px;padding:18px 45px;font-size:28px;font-weight:900;box-shadow:0 7px 0 #8b0000}
+#end{display:none}
+</style>
+</head>
+<body>
+<div id="game">
+<div id="hud"><div>Score: <span id="score">0</span></div><div>High: <span id="high">0</span></div><div>Time: <span id="time">60</span></div></div>
+<div id="title">MOHALI MADNESS - CP67 ROAD</div>
+<div class="shop" style="left:15px"></div><div class="shop" style="left:125px"></div><div class="shop" style="left:235px"></div><div class="shop" style="left:345px"></div>
+<div class="sign" style="left:15px">LASSI</div><div class="sign" style="left:150px">CP67</div><div class="sign" style="left:285px">STADIUM</div>
+<div id="road"></div><div id="line"></div>
+<div id="aditya">
+  <div class="horn1"></div><div class="horn2"></div>
+  <div class="head"><div class="face">>:)</div></div>
+  <div class="name">ADITYA</div>
+  <div class="body"></div><div class="belly"></div>
+</div>
+<div id="controls">
+  <button class="btn" id="left">LEFT</button>
+  <button class="btn" id="smash">BELLY<br>SMASH</button>
+  <button class="btn" id="right">RIGHT</button>
+</div>
+<div id="start">
+  <div class="card">
+    <h1>Aditya the Devil</h1>
+    <h2>Mohali Madness</h2>
+    <p>Belly smash people. They yell OMG. Collect lassi for bonus points.</p>
+    <button class="bigbtn" onclick="startGame()">PLAY</button>
+  </div>
+</div>
+<div id="end">
+  <div class="card">
+    <h1>GAME OVER</h1>
+    <h2>Score: <span id="final">0</span></h2>
+    <button class="bigbtn" onclick="startGame()">PLAY AGAIN</button>
+  </div>
+</div>
+</div>
+<script>
+let game=document.getElementById("game");
+let aditya=document.getElementById("aditya");
+let score=0,time=60,high=localStorage.getItem("adityaHigh")||0;
+let x=135,left=false,right=false,running=false,smashing=false;
+let people=[],items=[],timer,spawner,itemer;
+document.getElementById("high").innerText=high;
+function startGame(){
+ clearAll();
+ score=0;time=60;x=135;running=true;
+ document.getElementById("score").innerText=0;
+ document.getElementById("time").innerText=60;
+ document.getElementById("start").style.display="none";
+ document.getElementById("end").style.display="none";
+ timer=setInterval(tick,1000);
+ spawner=setInterval(spawnPerson,850);
+ itemer=setInterval(spawnItem,3000);
+ loop();
+}
+function clearAll(){
+ people.forEach(p=>p.el.remove());items.forEach(i=>i.el.remove());
+ people=[];items=[];
+ clearInterval(timer);clearInterval(spawner);clearInterval(itemer);
+ document.querySelectorAll(".bubble").forEach(b=>b.remove());
+}
+function tick(){
+ time--;document.getElementById("time").innerText=time;
+ if(time<=0)endGame();
+}
+function endGame(){
+ running=false;clearInterval(timer);clearInterval(spawner);clearInterval(itemer);
+ if(score>high){high=score;localStorage.setItem("adityaHigh",high);document.getElementById("high").innerText=high}
+ document.getElementById("final").innerText=score;
+ document.getElementById("end").style.display="flex";
+}
+function addScore(n){score+=n;document.getElementById("score").innerText=score}
+function spawnPerson(){
+ let el=document.createElement("div");el.className="person";
+ el.innerHTML='<div class="phead"></div><div class="pbody"></div>';
+ let side=Math.random()<.5?-60:innerWidth+60;
+ let speed=side<0?2+Math.random()*2:-(2+Math.random()*2);
+ el.style.left=side+"px";
+ game.appendChild(el);
+ people.push({el:el,x:side,speed:speed,hit:false});
+}
+function spawnItem(){
+ let el=document.createElement("div");el.className="item";el.innerText=Math.random()<.5?"LASSI":"SAMOSA";
+ let ix=25+Math.random()*(innerWidth-120);
+ el.style.left=ix+"px";
+ game.appendChild(el);
+ items.push({el:el,x:ix});
+ setTimeout(()=>{if(el.parentNode)el.remove();items=items.filter(i=>i.el!==el)},5000);
+}
+function bubble(text,bx){
+ let b=document.createElement("div");b.className="bubble";b.innerText=text;
+ b.style.left=bx+"px";b.style.bottom="280px";game.appendChild(b);
+ setTimeout(()=>b.remove(),700);
+}
+function smash(){
+ if(!running)return;
+ smashing=true;
+ aditya.querySelector(".belly").style.transform="scale(1.45)";
+ bubble("BELLY SMASH!",x+50);
+ setTimeout(()=>{smashing=false;aditya.querySelector(".belly").style.transform="scale(1)"},300);
+ checkHits();
+}
+function checkHits(){
+ people.forEach(p=>{
+  if(!p.hit && Math.abs(p.x-x)<95){
+   p.hit=true;p.speed=(p.x<x?-9:9);
+   addScore(10);
+   bubble(["OMG!","OYE HOYE!","KI HOYA?!"][Math.floor(Math.random()*3)],p.x);
+  }
+ });
+}
+function loop(){
+ if(!running)return;
+ if(left)x-=5;if(right)x+=5;
+ x=Math.max(5,Math.min(innerWidth-100,x));
+ aditya.style.left=x+"px";
+ people.forEach(p=>{
+  p.x+=p.speed;p.el.style.left=p.x+"px";
+  if(p.hit){p.el.style.bottom="230px";p.el.style.transform="rotate(25deg)"}
+ });
+ people=people.filter(p=>{let ok=p.x>-140&&p.x<innerWidth+140;if(!ok)p.el.remove();return ok});
+ items.forEach(i=>{
+  if(Math.abs(i.x-x)<70){
+   addScore(25);bubble("+25 LASSI POWER",i.x);
+   i.el.remove();i.dead=true;
+  }
+ });
+ items=items.filter(i=>!i.dead);
+ if(smashing)checkHits();
+ requestAnimationFrame(loop);
+}
+function hold(id,type){
+ let el=document.getElementById(id);
+ el.addEventListener("touchstart",e=>{e.preventDefault(); if(type=="l")left=true;if(type=="r")right=true;if(type=="s")smash();},{passive:false});
+ el.addEventListener("touchend",e=>{e.preventDefault(); if(type=="l")left=false;if(type=="r")right=false},{passive:false});
+ el.addEventListener("mousedown",()=>{if(type=="l")left=true;if(type=="r")right=true;if(type=="s")smash()});
+ el.addEventListener("mouseup",()=>{if(type=="l")left=false;if(type=="r")right=false});
+}
+hold("left","l");hold("right","r");hold("smash","s");
+</script>
 </body>
 </html>
+
+After commit, open:
+
+https://kaushalabhinandan3-beep.github.io/
