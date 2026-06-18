@@ -2,33 +2,39 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Aditya the Devil: Mohali Madness</title>
+<title>Aditya the Devil: Mohali Madness V3</title>
 <style>
-html,body{margin:0;height:100%;overflow:hidden;font-family:Arial;background:#5ecbff;touch-action:none}
-#game{position:fixed;inset:0;overflow:hidden;background:linear-gradient(#61cfff 0 55%,#d9a851 55% 100%)}
-#hud{position:absolute;top:18px;left:12px;right:12px;display:flex;justify-content:space-between;color:white;font-size:20px;font-weight:900;text-shadow:2px 2px #000;z-index:8}
-#place{position:absolute;top:62px;left:0;right:0;text-align:center;color:white;font-size:19px;font-weight:900;text-shadow:2px 2px #000;z-index:8}
-#road{position:absolute;bottom:96px;left:0;right:0;height:95px;background:#333;border-top:7px solid #222}
-.line{position:absolute;bottom:138px;left:0;right:0;border-top:5px dashed white}
-.shop{position:absolute;bottom:190px;width:31vw;height:82px;background:#d24a2d;border:4px solid #762112;border-radius:8px}
-.shop span{position:absolute;top:-42px;left:8px;right:8px;background:#fff47a;border:4px solid #111;border-radius:12px;text-align:center;font-weight:900;font-size:18px;padding:8px 0}
-#aditya{position:absolute;bottom:162px;left:38vw;width:92px;height:118px;z-index:5}
-.head{position:absolute;left:20px;top:0;width:54px;height:54px;background:#ffc396;border:4px solid #111;border-radius:50%}
-.h1,.h2{position:absolute;top:-18px;border-left:10px solid transparent;border-right:10px solid transparent;border-bottom:30px solid #b00000}.h1{left:24px}.h2{left:56px}
-.eye{position:absolute;top:20px;left:36px;font-size:18px;font-weight:900}.name{position:absolute;top:38px;left:-2px;background:#111;color:white;border-radius:10px;padding:3px 8px;font-weight:900;font-size:12px}
-.body{position:absolute;left:6px;top:55px;width:80px;height:58px;background:#d90000;border:4px solid #111;border-radius:45%}
-.belly{position:absolute;left:34px;top:72px;width:58px;height:52px;background:#ffd3a2;border:4px solid #111;border-radius:50%;transition:.08s}
-.enemy{position:absolute;bottom:160px;width:48px;height:78px;z-index:4}
-.eh{width:32px;height:32px;margin:auto;background:#ffd1a1;border:4px solid #111;border-radius:50%}
-.eb{width:42px;height:42px;margin:auto;background:#2368db;border:4px solid #111;border-radius:10px}
-.power{position:absolute;bottom:174px;background:#fff47a;border:4px solid #111;border-radius:14px;padding:9px;font-weight:900;z-index:4}
-.bubble{position:absolute;background:white;border:4px solid #111;border-radius:16px;padding:7px 10px;font-size:18px;font-weight:900;z-index:10}
-#controls{position:absolute;bottom:18px;left:8px;right:8px;display:flex;justify-content:space-between;z-index:20}
-.btn{width:88px;height:65px;border:4px solid white;border-radius:22px;background:#111;color:white;font-weight:900;font-size:18px}
-#smash{width:150px;background:#e60000}
-#menu,#over{position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:30;display:flex;align-items:center;justify-content:center}
-.card{width:86%;background:white;border:5px solid #111;border-radius:24px;text-align:center;padding:22px}
-.card h1{color:#b00000;margin:0;font-size:30px}.card h2{margin:7px 0 12px}.card p{font-size:16px;line-height:1.35}
+html,body{margin:0;height:100%;overflow:hidden;font-family:Arial;background:#64ceff;touch-action:none}
+#game{position:fixed;inset:0;overflow:hidden;background:linear-gradient(#62cfff 0 55%,#d9a851 55% 100%)}
+#hud{position:absolute;top:18px;left:10px;right:10px;display:flex;justify-content:space-between;color:white;font-weight:900;font-size:19px;text-shadow:2px 2px #000;z-index:20}
+#place{position:absolute;top:60px;left:0;right:0;text-align:center;color:white;font-size:19px;font-weight:900;text-shadow:2px 2px #000;z-index:20}
+#road{position:absolute;bottom:110px;left:0;right:0;height:110px;background:#333;border-top:8px solid #222}
+#line{position:absolute;bottom:160px;left:0;right:0;border-top:6px dashed white}
+.shop{position:absolute;bottom:220px;width:33vw;height:90px;background:#ca4a31;border:4px solid #111;border-radius:10px}
+.shop span{position:absolute;top:-48px;left:8px;right:8px;background:#fff47a;border:4px solid #111;border-radius:14px;text-align:center;font-weight:900;font-size:18px;padding:8px 0}
+#aditya{position:absolute;bottom:190px;left:42vw;width:105px;height:140px;z-index:10}
+.horn{position:absolute;top:-15px;width:0;height:0;border-left:11px solid transparent;border-right:11px solid transparent;border-bottom:34px solid #b00000}
+.horn.a{left:25px}.horn.b{left:67px}
+.head{position:absolute;left:22px;top:5px;width:66px;height:62px;background:#ffc49a;border:5px solid #111;border-radius:50%}
+.hair{position:absolute;top:-7px;left:5px;width:52px;height:16px;background:#111;border-radius:50%}
+.eye{position:absolute;top:23px;left:43px;font-size:18px;font-weight:900}
+.beard{position:absolute;left:15px;top:40px;width:36px;height:16px;background:#111;border-radius:0 0 20px 20px}
+.name{position:absolute;top:50px;left:-5px;background:#111;color:white;border-radius:12px;padding:4px 9px;font-weight:900;font-size:12px}
+.body{position:absolute;left:6px;top:70px;width:93px;height:65px;background:#d90000;border:5px solid #111;border-radius:48%}
+.belly{position:absolute;left:39px;top:86px;width:67px;height:59px;background:#ffd4a4;border:5px solid #111;border-radius:50%;transition:.08s}
+.cape{position:absolute;left:-8px;top:72px;width:45px;height:70px;background:#840000;border-radius:50%;z-index:-1}
+.enemy{position:absolute;bottom:190px;width:52px;height:82px;z-index:8}
+.eh{width:34px;height:34px;margin:auto;background:#ffd1a1;border:4px solid #111;border-radius:50%}
+.eb{width:45px;height:44px;margin:auto;background:#2368db;border:4px solid #111;border-radius:10px}
+.police .eb{background:#111}.gym .eb{background:#34a853}.scooter{font-size:45px;width:80px}
+.power{position:absolute;bottom:205px;background:#fff47a;border:4px solid #111;border-radius:14px;padding:9px;font-weight:900;z-index:9}
+.bubble{position:absolute;background:white;border:4px solid #111;border-radius:16px;padding:7px 10px;font-size:18px;font-weight:900;z-index:30}
+#controls{position:absolute;bottom:20px;left:8px;right:8px;display:flex;justify-content:space-between;z-index:40}
+.btn{width:90px;height:68px;border:5px solid white;border-radius:24px;background:#111;color:white;font-weight:900;font-size:18px}
+#smash{width:160px;background:#e60000;font-size:20px}
+#menu,#over{position:absolute;inset:0;background:rgba(0,0,0,.62);z-index:60;display:flex;align-items:center;justify-content:center}
+.card{width:86%;background:white;border:5px solid #111;border-radius:26px;text-align:center;padding:22px}
+.card h1{color:#b00000;margin:0;font-size:30px}.card h2{margin:8px 0 12px}.card p{font-size:16px;line-height:1.35}
 .play{background:#e60000;color:white;border:0;border-radius:18px;padding:17px 42px;font-size:27px;font-weight:900;box-shadow:0 7px 0 #7c0000}
 #over{display:none}
 </style>
@@ -36,86 +42,151 @@ html,body{margin:0;height:100%;overflow:hidden;font-family:Arial;background:#5ec
 <body>
 <div id="game">
 <div id="hud"><div>Score: <span id="score">0</span></div><div>High: <span id="high">0</span></div><div>Time: <span id="time">60</span></div></div>
-<div id="place">MOHALI MADNESS - CP67 TO STADIUM</div>
-<div class="shop" style="left:2vw"><span>LASSI SHOP</span></div>
-<div class="shop" style="left:34vw"><span>CP67 MALL</span></div>
+<div id="place">MOHALI MADNESS</div>
+
+<div class="shop" style="left:0"><span>CP67 MALL</span></div>
+<div class="shop" style="left:33vw"><span>PHASE 10</span></div>
 <div class="shop" style="left:66vw"><span>STADIUM</span></div>
-<div id="road"></div><div class="line"></div>
+
+<div id="road"></div><div id="line"></div>
+
 <div id="aditya">
-<div class="h1"></div><div class="h2"></div><div class="head"><div class="eye">&gt;:)</div></div><div class="name">ADITYA</div><div class="body"></div><div class="belly"></div>
+<div class="cape"></div><div class="horn a"></div><div class="horn b"></div>
+<div class="head"><div class="hair"></div><div class="eye">&gt;:)</div><div class="beard"></div></div>
+<div class="name">ADITYA</div><div class="body"></div><div class="belly"></div>
 </div>
+
 <div id="controls">
 <button class="btn" id="left">LEFT</button>
 <button class="btn" id="smash">BELLY<br>SMASH</button>
 <button class="btn" id="right">RIGHT</button>
 </div>
-<div id="menu"><div class="card"><h1>Aditya the Devil</h1><h2>Mohali Madness</h2><p>Move left/right. Hit people only with BELLY SMASH. Collect LASSI for Belly Fury.</p><button class="play" onclick="start()">PLAY</button></div></div>
-<div id="over"><div class="card"><h1>GAME OVER</h1><h2>Score: <span id="final">0</span></h2><p id="rank"></p><button class="play" onclick="start()">PLAY AGAIN</button></div></div>
+
+<div id="menu"><div class="card">
+<h1>Aditya the Devil</h1>
+<h2>Mohali Madness V3</h2>
+<p>Smash people, police, gym bros and scooters. Collect LASSI and CHOLE for special powers. Boss appears at 500 points.</p>
+<button class="play" onclick="start()">PLAY</button>
+</div></div>
+
+<div id="over"><div class="card">
+<h1>GAME OVER</h1>
+<h2>Score: <span id="final">0</span></h2>
+<p id="rank"></p>
+<button class="play" onclick="start()">PLAY AGAIN</button>
+</div></div>
 </div>
+
 <script>
-let score=0,time=60,high=Number(localStorage.getItem("high")||0);
-let x=window.innerWidth/2-45,left=false,right=false,running=false,fury=0,smashing=false;
+let score=0,time=60,high=Number(localStorage.getItem("high3")||0);
+let x=window.innerWidth/2-55,left=false,right=false,running=false,fury=0,giant=0,smashing=false,boss=false;
 let enemies=[],powers=[],loops=[];
 const game=document.getElementById("game"),aditya=document.getElementById("aditya"),belly=document.querySelector(".belly");
 document.getElementById("high").innerText=high;
+
 function start(){
-clearGame();score=0;time=60;fury=0;running=true;x=innerWidth/2-45;
+clearGame();score=0;time=60;fury=0;giant=0;boss=false;running=true;x=innerWidth/2-55;
 document.getElementById("score").innerText=0;document.getElementById("time").innerText=60;
 document.getElementById("menu").style.display="none";document.getElementById("over").style.display="none";
 loops.push(setInterval(()=>{time--;document.getElementById("time").innerText=time;if(time<=0)end()},1000));
-loops.push(setInterval(spawnEnemy,750));
-loops.push(setInterval(spawnPower,4200));
+loops.push(setInterval(spawnEnemy,700));
+loops.push(setInterval(spawnPower,3500));
 requestAnimationFrame(loop);
 }
+
 function clearGame(){
 loops.forEach(clearInterval);loops=[];enemies.forEach(e=>e.el.remove());powers.forEach(p=>p.el.remove());
 enemies=[];powers=[];document.querySelectorAll(".bubble").forEach(b=>b.remove());
 }
+
 function end(){
 running=false;loops.forEach(clearInterval);
-if(score>high){high=score;localStorage.setItem("high",high);document.getElementById("high").innerText=high;document.getElementById("rank").innerText="NEW HIGH SCORE!";}
-else document.getElementById("rank").innerText="Try again for high score.";
+if(score>high){high=score;localStorage.setItem("high3",high);document.getElementById("high").innerText=high;document.getElementById("rank").innerText="NEW HIGH SCORE!";}
+else document.getElementById("rank").innerText="Try again. Boss fight starts at 500.";
 document.getElementById("final").innerText=score;document.getElementById("over").style.display="flex";
 }
-function add(n){score+=n;document.getElementById("score").innerText=score}
+
+function add(n){score+=n;document.getElementById("score").innerText=score;if(score>=500&&!boss){boss=true;spawnBoss();say("STADIUM BOSS ENTERED!",80,340)}}
+
 function spawnEnemy(){
-let el=document.createElement("div");el.className="enemy";el.innerHTML='<div class="eh"></div><div class="eb"></div>';
-let side=Math.random()<.5?-70:innerWidth+70;el.style.left=side+"px";game.appendChild(el);
-enemies.push({el,x:side,v:side<0?2.4+Math.random()*2.3:-(2.4+Math.random()*2.3),hit:false});
+let type=Math.random();
+let el=document.createElement("div");
+let side=Math.random()<.5?-90:innerWidth+90;
+let speed=side<0?2.6+Math.random()*2.6:-(2.6+Math.random()*2.6);
+if(type<.15){el.className="enemy scooter";el.innerText="SCOOTER";speed*=1.35}
+else{el.className="enemy "+(type<.35?"police":type<.55?"gym":"");el.innerHTML='<div class="eh"></div><div class="eb"></div>'}
+el.style.left=side+"px";game.appendChild(el);
+enemies.push({el,x:side,v:speed,hit:false,boss:false,hp:1});
 }
+
+function spawnBoss(){
+let el=document.createElement("div");el.className="enemy gym";el.innerHTML='<div class="eh"></div><div class="eb"></div>';
+el.style.transform="scale(1.8)";let side=innerWidth+130;el.style.left=side+"px";game.appendChild(el);
+enemies.push({el,x:side,v:-2.2,hit:false,boss:true,hp:5});
+}
+
 function spawnPower(){
-let el=document.createElement("div");el.className="power";el.innerText=Math.random()<.5?"LASSI":"SAMOSA";
-let px=20+Math.random()*(innerWidth-110);el.style.left=px+"px";game.appendChild(el);
-powers.push({el,x:px});setTimeout(()=>{if(el.parentNode)el.remove();powers=powers.filter(p=>p.el!==el)},5500);
+let el=document.createElement("div");el.className="power";
+let r=Math.random();el.innerText=r<.45?"LASSI":r<.8?"CHOLE": "TEA";
+let px=20+Math.random()*(innerWidth-115);el.style.left=px+"px";game.appendChild(el);
+powers.push({el,x:px,type:el.innerText});setTimeout(()=>{if(el.parentNode)el.remove();powers=powers.filter(p=>p.el!==el)},5500);
 }
-function say(t,bx,by=285){
-let b=document.createElement("div");b.className="bubble";b.innerText=t;b.style.left=Math.max(6,Math.min(innerWidth-120,bx))+"px";b.style.bottom=by+"px";game.appendChild(b);setTimeout(()=>b.remove(),750);
+
+function say(t,bx,by=315){
+let b=document.createElement("div");b.className="bubble";b.innerText=t;
+b.style.left=Math.max(5,Math.min(innerWidth-170,bx))+"px";b.style.bottom=by+"px";game.appendChild(b);setTimeout(()=>b.remove(),800);
 }
+
 function smash(){
-if(!running)return;smashing=true;belly.style.transform=fury>0?"scale(1.85)":"scale(1.55)";say("BELLY SMASH!",x+35,300);
-setTimeout(()=>{smashing=false;belly.style.transform="scale(1)"},260);hitCheck();
+if(!running)return;smashing=true;
+belly.style.transform=(giant>0||fury>0)?"scale(2.05)":"scale(1.55)";
+say("BELLY SMASH!",x+35,330);
+if(navigator.vibrate)navigator.vibrate(60);
+setTimeout(()=>{smashing=false;belly.style.transform=(giant>0)?"scale(1.35)":"scale(1)"},260);
+hitCheck();
 }
+
 function hitCheck(){
-let range=fury>0?140:95;
-enemies.forEach(e=>{if(!e.hit&&Math.abs(e.x-x)<range){e.hit=true;e.v=e.x<x?-9:9;add(fury>0?20:10);say(["OMG!","OYE HOYE!","KI HOYA?!"][Math.floor(Math.random()*3)],e.x);}});
+let range=giant>0?175:fury>0?140:95;
+enemies.forEach(e=>{
+if(Math.abs(e.x-x)<range&&!e.hit){
+e.hp--;
+if(e.hp<=0){
+e.hit=true;e.v=e.x<x?-10:10;add(e.boss?150:(fury>0?20:10));
+say(e.boss?"BOSS DOWN!":"OMG!",e.x);
+}else say("BOSS HP "+e.hp,e.x);
 }
+});
+}
+
 function loop(){
 if(!running)return;
-if(left)x-=5.8;if(right)x+=5.8;x=Math.max(5,Math.min(innerWidth-100,x));aditya.style.left=x+"px";
-if(fury>0){fury--;document.getElementById("place").innerText="BELLY FURY MODE!";}else document.getElementById("place").innerText="MOHALI MADNESS - CP67 TO STADIUM";
-enemies.forEach(e=>{e.x+=e.v;e.el.style.left=e.x+"px";if(e.hit){e.el.style.bottom="230px";e.el.style.transform="rotate(30deg)"}});
-enemies=enemies.filter(e=>{let ok=e.x>-160&&e.x<innerWidth+160;if(!ok)e.el.remove();return ok});
-powers.forEach(p=>{if(Math.abs(p.x-x)<75){add(25);fury=360;say("LASSI POWER +25",p.x,315);p.el.remove();p.dead=true;}});
+let speed=giant>0?4.7:6.2;if(left)x-=speed;if(right)x+=speed;
+x=Math.max(5,Math.min(innerWidth-115,x));aditya.style.left=x+"px";
+if(fury>0){fury--;document.getElementById("place").innerText="BELLY FURY MODE"}
+else if(giant>0){giant--;document.getElementById("place").innerText="GIANT BELLY MODE"}
+else document.getElementById("place").innerText=boss?"MOHALI STADIUM BOSS":"MOHALI MADNESS";
+
+enemies.forEach(e=>{e.x+=e.v;e.el.style.left=e.x+"px";if(e.hit){e.el.style.bottom="255px";e.el.style.transform+=" rotate(30deg)"}});
+enemies=enemies.filter(e=>{let ok=e.x>-190&&e.x<innerWidth+190;if(!ok)e.el.remove();return ok});
+
+powers.forEach(p=>{
+if(Math.abs(p.x-x)<80){
+if(p.type=="LASSI"){fury=360;add(25);say("LASSI POWER +25",p.x)}
+else if(p.type=="CHOLE"){giant=360;belly.style.transform="scale(1.35)";add(35);say("GIANT BELLY +35",p.x)}
+else{time+=8;add(15);say("TEA SPEED +8 SEC",p.x)}
+p.el.remove();p.dead=true;
+}
+});
 powers=powers.filter(p=>!p.dead);
 if(smashing)hitCheck();
 requestAnimationFrame(loop);
 }
+
 function hold(id,kind){
 let el=document.getElementById(id);
 el.addEventListener("touchstart",e=>{e.preventDefault();if(kind=="l")left=true;if(kind=="r")right=true;if(kind=="s")smash()},{passive:false});
 el.addEventListener("touchend",e=>{e.preventDefault();if(kind=="l")left=false;if(kind=="r")right=false},{passive:false});
-el.addEventListener("mousedown",()=>{if(kind=="l")left=true;if(kind=="r")right=true;if(kind=="s")smash()});
-el.addEventListener("mouseup",()=>{if(kind=="l")left=false;if(kind=="r")right=false});
 }
 hold("left","l");hold("right","r");hold("smash","s");
 </script>
